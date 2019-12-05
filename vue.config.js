@@ -6,7 +6,7 @@ module.exports={
     devServer:{
         open:false, //是否启动打开浏览器
         host:"0.0.0.0",//主机，0.0.0.0支持局域网地址，可以用真机测试
-        port:"8002",
+        port:"8080",
         //配置跨域代理
         proxy:{
             "/proxy":{

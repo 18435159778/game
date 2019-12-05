@@ -15,12 +15,15 @@ function axiosRequest(url,type="get",data={},config={}){
             }
         }
     }else if(type==='post') {
-        if (data instanceof Object) {
-            params = new URLSearchParams()
-            for (var key in data) {
-                params.append(key, data[key]);
-            }
-        }
+        // if (data instanceof Object) {
+        //     params = new URLSearchParams()
+        //     for (var key in data) {
+
+        //         params.append(key, data[key]);
+        //     }
+        //     console.log(params);
+        // }
+        params=data;
         stype=type;
     }
     let ajaxConfig= {

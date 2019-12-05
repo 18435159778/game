@@ -47,6 +47,19 @@ let router=new Router({
             name:"Automatic",
             component:()=>import("./pages/home/Automatic/index"),
             meta:{title:"自动开奖"}
+        },
+        {
+            path:"/recoredlist",
+            name:"recoredlist",
+            component:()=>import("./pages/home/lotteryInfo/rcored-list.vue"),
+            meta:{title:"开奖记录"}
+        },
+        {
+            path:"/recoreditem",
+            name:"recoreditem",
+            component:()=>import("./pages/home/lotteryInfo/recored-item.vue"),
+            meta:{title:"开奖详情"}
+
         }
 
         

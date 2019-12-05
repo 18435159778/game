@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="header">
-      <van-button type="info" round>登录</van-button>
-      <van-button type="info" round>抽奖活动</van-button>
+      <van-button @click="goPage('/login')" type="info" round>登录</van-button>
+      <van-button @click="goPage('/lottery')" type="info" round>抽奖活动</van-button>
       <van-button type="info" round>公告</van-button>
     </div>
     <van-tabs  @click="onClick">
@@ -48,6 +48,9 @@ export default {
     this.getInfoRight();
   },
   methods: {
+    goPage(url){
+      this.$router.push(url)
+    },
     getInfo() {
       this.$request(this.$config.baseApi + `/game/worldList?worldId=W${this.cid}`).then(
         (res) => {

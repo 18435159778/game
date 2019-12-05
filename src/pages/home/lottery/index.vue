@@ -18,8 +18,8 @@
       <div class="main-middle">
         <div>剩余官位{{num}}个</div>
         <div>参与时间<p>{{date}}</p></div>
-        <div><button type="button">开奖</button></div>
-        <div><button type="button">自动开奖</button></div>
+        <div><button type="button" @click="lotteryBtn()">开奖</button></div>
+        <div><button @click="goPage('/Automatic')" type="button">自动开奖</button></div>
       </div>
       <div class="main-right">
         <ul>
@@ -70,6 +70,15 @@ export default {
     this.Participant();
   },
   methods: {
+    //开奖按钮
+    lotteryBtn(){
+      this.$request(this.$config.baseApi+`/game/bingo?num=${this.num}`).then((res)=>{
+        console.log(res);
+      })
+    },
+    goPage(url){
+      this.$router.push(url);
+    },
     //参与
     ParticipantMap(){
       this.$request(this.$config.baseApi+`/game/addActor?actorName=${this.name}`).then((res)=>{
